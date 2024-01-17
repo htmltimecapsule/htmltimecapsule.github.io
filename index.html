@@ -1,0 +1,250 @@
+<html>
+  <head>
+    <title>HTML Time Capsule: Help us create the website for the future</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Through a workshop at D*sign Week Linz, we explore the accessibility and ease of use of HTML by using the most accessible means – pen and paper – to create a collaborative website. We are encouraging a broad audience to participate in building a digital archive of the things people want to preserve for the future. This website is built with the inputs gathered in this workshop."
+    />
+  </head>
+  <style>
+     body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      height: 100vh; 
+      overflow: hidden; 
+    }
+
+    section {
+      flex: 1;
+      box-sizing: border-box;
+      padding: 10px;
+      overflow-y: auto; /* Enable vertical scrolling */
+      /* Hide the scrollbar for WebKit browsers */
+      scrollbar-width: thin;
+      scrollbar-color: transparent transparent;
+    }
+
+    /* Custom scrollbar styles for WebKit (Chrome, Safari) */
+    section::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    section::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    section::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .about-button{
+      z-index: 999;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      width: 100vw;
+      height: 100vh; 
+      color: white;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .overlay p {
+      background-color: #FFFF00;
+      color: #000; 
+      margin: 20vw;
+    }
+
+    section{
+      margin-top: 0.7em;
+    }
+  
+  </style>
+  <body>
+      <div class="header">
+        <!-- About button -->
+        <div class="about-button">
+          <button onclick="toggleOverlay()">About</button>
+        </div>
+      </div>
+      <!-- Timer display -->
+    <div id="timer" style="position: fixed; top:10px; right: 20px; border: 0.5px solid black; border-radius: 2px; padding: 0 6px;"></div>
+    <div class="overlay" id="overlay" onclick="closeOverlay()">
+      <div class="overlay-content">
+        <p>HTML, the backbone of the World Wide Web, is known for its stability and reliability. Through a workshop at <a href="https://dsignweek.servus.at/" target="_blank">D*sign Week Linz</a>, we explore its accessibility and ease of use by using the most accessible means – pen and paper – to create a collaborative website. By promoting the idea of creating a website without coding knowledge, we are emphasizing inclusivity and accessibility, encouraging a broader audience to participate in building a digital archive of the things people want to preserve for the future. This website is built with the inputs gathered in this workshop.<br><br>Why is a timer running? A common minsconception is that something can be preserved digitally forever. Even though efforts can be made to extend the lifespan of digitally stored materials, achieving absolute permanence is difficult. Digital content is inherently impermanent. In recognizing this reality, we seek simultaneously digital and analog solutions for the preservation of our archive.</p>
+      </div>
+    </div>
+    <!-- What would you preserve, if the earth was on fire? -->
+    <section>
+      <p style="background-color: rgb(254, 89, 29); margin-top: 1em; padding: 10px; color: white; border-radius: 2px;">What would you preserve, if the earth was on fire?</p>
+      <p>add item to the list:</p>
+      <ul>
+        <li>oxigen</li>
+        <li>water</li>
+        <li>...</li>
+      </ul>
+      <p>sichuan chili oil</p>
+      <p>you</p>
+      <p>my coin collection</p>
+      <p>my pets</p>
+      <p>my external drives, my letters from others, memories in general</p>
+      <p>my diary... or my laptop</p>
+      <p>art works such as&nbsp;:<br><i>le boeuf écorché</i> from Rembrandt<br>paintings from Odilon Redon</p>
+      <p>The Shrek Quadrologie on DVD</p>
+      <p>my harddrive</p>
+      <p>wasserhahn</p>
+      <p>Marshmellows</p>
+      <p>chocolate</p>
+      <p>pillow & blankets</p>
+      <p>Knowledge & Humanity</p>
+      <p>The entire CumTown episodes</p>
+      <h2>AI will build it for us</h2>
+      <h3>Don't make yourself tired :)</h3>
+      <p>Cameras & Books</p>
+      <p>life</p>
+      <p>books</p>
+      <aside>The earth *IS* on fire /o\</aside>
+      <h1>How many creature survive</h1>
+      <h1>My kids</h1>
+      <h4>Earth</h4>
+      <h1>Animals</h1>
+      <h5>Tools</h5>
+      <p>Isn't it already on fire?</p>
+      <p>pierogi</p>
+      <p>PIKACHU</p>
+      <p>sugar</p>
+      <p>my hair</p>
+      <p>music</p>
+    </section>
+    <!-- If you had 30 seconds to live, what would be your last words? -->
+    <section>
+      <p style="background-color: rgb(254, 89, 29); margin-top: 1em; padding: 10px; color: white; border-radius: 2px;">If you had 30 seconds to live, what would be your last words?</p>
+      <p>OK</p>
+      <p>I love you</p>
+      <p>I love my family &#128546</p>
+      <p>I'm thankful</p>
+      <p>I miss everything I had</p>
+      <p>Danke, mama.</p>
+      <p>AAAAAAAHH Shit</p>
+      <p>{{ data.words }}</p>
+      <p>(º _ º)</p>
+      <p>Kill AI</p>
+      <p>Thanks for everything</p>
+      <p>*silence*</p>
+      <p>I'm out</p>
+      <p>Against my best wishes...</p>
+    <!-- <script>
+      let words = ['nice', 'shit', 'terrific', 'terrible', 'lovely'];
+      words.forEach(word => {
+        alert("It was "+word+", thanks fellow entities.");
+      }); //with an italian accent!
+    </script> -->
+      <p>greatful but sad not to be here anymore. Love to my family</p>
+      <span style="transform: rotate(90deg);">This has all been quite entertaining</span>
+      <p><live>I'll just stop talking and try to recive more</live></p>
+      <p><love>Give me a hug!</love></p>
+      <p>I wish I'd told you I loved you</p>
+      <p>I'll miss you world</p>
+      <p>ups</p>
+      <p>ojemine</p>
+      <h1>AAAAAAHHH</h1>
+      <h2>rock 'n roll</h2>
+      <h2>lol</h2>
+      <p>i'm fucked</p>
+      <p>ok &#129485</p>
+    </section>
+     <!-- In times of information overload, what helps you find a sense of calm? -->
+    <section>
+      <p style="background-color: rgb(254, 89, 29); margin-top: 1em; padding: 10px; color: white; border-radius: 2px;">In times of information overload, what helps you find a sense of calm?</p>
+      <p>food</p>
+      <p>walking in grass</p>
+      <p>take a nap</p>
+      <p>social media detox</p>
+      <p>music</p>
+      <p>a really nice and calm book, with a story to dig in</p>
+      <p>playing gong<br>looking to my plants<br>huging trees<br>melting into my partner's harms</p>
+      <p>trainriding and looking out of the window, drawing, writing</p>
+      <p>Super Mario Speed Runs</p>
+      <h2>Delete information until sense of calmness is found.<br>Delete even more for good measure<br>Profit</h2>
+      <p>climbing in the mountains</p>
+      <p>Music</p>
+      <p>take a walk</p>
+      <p>meeting loved ones</p>
+      <p>sad music. In Madison Beer we trust.<br>Lana n Adele too.</p>
+      <p>overloading on more info.</p>
+      <p>Bombing the US Govt. wink wink</p>
+      <p>Visiting my family</p>
+      <p>taking a walk & drinking a coffee</p>
+      <p>meditating, exchange with friends & family</p>
+      <p>meditating, smoking (but not really), music</p>
+      <marquee>Watching the words gently drift by...</marquee>
+      <div>bssssss....</div>
+      <p>scilence/close eyes</p>
+      <h1>going into the woods</h1>
+      <p>the things give experience and info</p>
+      <p>watching sachsen memes</p>
+      <p>bread</p>
+      <p>pigeons</p>
+      <p>clouds</p>
+      <p>sex</p>
+      <p>looking up or down</p>
+      <p>a bath</p>
+      <p>sleep</p>
+      <p>going to sleep</p>
+    </section>
+
+    <script>
+    function toggleOverlay() {
+      var overlay = document.getElementById('overlay');
+      overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function closeOverlay() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  
+      // Timer code
+  var seconds = 24 * 60 * 60; // 24 hours in seconds
+  var timerInterval = setInterval(function () {
+    seconds--;
+
+    if (seconds >= 0) {
+      document.getElementById('timer').innerHTML = formatTime(seconds);
+    } else {
+      clearInterval(timerInterval); // Stop the timer when it reaches 0
+      document.body.style.display = 'none'; // Hide the entire page
+    }
+  }, 1000);
+
+  function formatTime(seconds) {
+    var hours = Math.floor(seconds / 3600);
+    var minutes = Math.floor((seconds % 3600) / 60);
+    var remainingSeconds = seconds % 60;
+
+    return pad(hours) + ':' + pad(minutes) + ':' + pad(remainingSeconds);
+  }
+
+  function pad(time) {
+    return time < 10 ? '0' + time : time;
+  }
+    </script>
+  </body>
+</html>
