@@ -54,6 +54,7 @@
 
     .about-button{
       z-index: 999;
+      left: 10px;
     }
 
     .overlay {
@@ -68,9 +69,15 @@
     }
 
     .overlay p {
-      background-color: #FFFF00;
-      color: #000; 
+      background-color: #1713f0;
+      color: white; 
       margin: 20vw;
+      padding: 1vw;
+      border-radius: 2px;
+    }
+
+    a{
+      color: white;
     }
 
     section{
@@ -86,10 +93,10 @@
         </div>
       </div>
       <!-- Timer display -->
-    <div id="timer" style="position: fixed; top:10px; right: 20px; border: 0.5px solid black; border-radius: 2px; padding: 0 6px;"></div>
+    <!-- <div id="timer" style="position: fixed; top:10px;left: 11px;border: 0.5px solid black; border-radius: 2px; padding: 0 6px;"></div> -->
     <div class="overlay" id="overlay" onclick="closeOverlay()">
       <div class="overlay-content">
-        <p>HTML, the backbone of the World Wide Web, is known for its stability and reliability. Through a workshop at <a href="https://dsignweek.servus.at/" target="_blank">D*sign Week Linz</a>, we explore its accessibility and ease of use by using the most accessible means – pen and paper – to create a collaborative website. By promoting the idea of creating a website without coding knowledge, we are emphasizing inclusivity and accessibility, encouraging a broader audience to participate in building a digital archive of the things people want to preserve for the future. This website is built with the inputs gathered in this workshop.<br><br>Why is a timer running? A common minsconception is that something can be preserved digitally forever. Even though efforts can be made to extend the lifespan of digitally stored materials, achieving absolute permanence is difficult. Digital content is inherently impermanent. In recognizing this reality, we seek simultaneously digital and analog solutions for the preservation of our archive.</p>
+        <p>HTML, the backbone of the World Wide Web, is known for its stability and reliability. Through a workshop at <a href="https://dsignweek.servus.at/" target="_blank">D*sign Week Linz</a>, we explore its accessibility and ease of use by using the most accessible means – pen and paper – to create a collaborative website. By promoting the idea of creating a website without coding knowledge, we are emphasizing inclusivity and accessibility, encouraging a broader audience to participate in building a digital archive of the things people want to preserve for the future. This website is built with the inputs gathered in this workshop.<br><br>Why is a timer running? A common misconception is that something can be preserved digitally forever. Even though efforts can be made to extend the lifespan of digitally stored materials, achieving absolute permanence is difficult. Digital content is inherently impermanent. In recognizing this reality, we seek simultaneously digital and analog solutions for the preservation of our archive.</p>
       </div>
     </div>
     <!-- What would you preserve, if the earth was on fire? -->
@@ -210,7 +217,6 @@
       <p>sleep</p>
       <p>going to sleep</p>
     </section>
-
     <script>
     function toggleOverlay() {
       var overlay = document.getElementById('overlay');
@@ -222,29 +228,29 @@
     }
   
       // Timer code
-  var seconds = 24 * 60 * 60; // 24 hours in seconds
-  var timerInterval = setInterval(function () {
-    seconds--;
+  // var seconds = 1200; 
+  // var timerInterval = setInterval(function () {
+  //   seconds--;
 
-    if (seconds >= 0) {
-      document.getElementById('timer').innerHTML = formatTime(seconds);
-    } else {
-      clearInterval(timerInterval); // Stop the timer when it reaches 0
-      document.body.style.display = 'none'; // Hide the entire page
-    }
-  }, 1000);
+  //   if (seconds >= 0) {
+  //     document.getElementById('timer').innerHTML = formatTime(seconds);
+  //   } else {
+  //     clearInterval(timerInterval); // Stop the timer when it reaches 0
+  //     window.location.href = 'error.html';
+  //   }
+  // }, 1000);
 
-  function formatTime(seconds) {
-    var hours = Math.floor(seconds / 3600);
-    var minutes = Math.floor((seconds % 3600) / 60);
-    var remainingSeconds = seconds % 60;
+  // function formatTime(seconds) {
+  //   var hours = Math.floor(seconds / 3600);
+  //   var minutes = Math.floor((seconds % 3600) / 60);
+  //   var remainingSeconds = seconds % 60;
 
-    return pad(hours) + ':' + pad(minutes) + ':' + pad(remainingSeconds);
-  }
+  //   return pad(hours) + ':' + pad(minutes) + ':' + pad(remainingSeconds);
+  // }
 
-  function pad(time) {
-    return time < 10 ? '0' + time : time;
-  }
+  // function pad(time) {
+  //   return time < 10 ? '0' + time : time;
+  // }
     </script>
   </body>
 </html>
