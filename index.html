@@ -67,10 +67,6 @@
       align-items: center;
       text-align: center;
     }
-    
-    .overlay-content {
-    overflow-y: auto; /* Enable vertical scrolling for overlay content on mobile */
-  }
 
     .overlay p {
       background-color: #1713f0;
@@ -87,6 +83,16 @@
     section{
       margin-top: 0.7em;
     }
+
+    @media only screen and (max-width: 600px) {
+      .overlay p {
+      margin: 15vw;   
+    }
+
+    .overlay-content {
+    overflow-y: auto; /* Enable vertical scrolling for overlay content on mobile */
+  }
+  }
   
   </style>
   <body>
